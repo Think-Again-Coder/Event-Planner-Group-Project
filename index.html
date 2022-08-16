@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
+    <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Event Planner</title>
 </head>
 <body>
-    <header class="title">
-        <h1>Event Planner</h1>
+    <header class="title hero is-link">
+        <div class="hero-body">
+          <p class="title">
+            Event Planner
+          </p>
+          <p class="subtitle">
+            Your event starts here!
+          </p>
+        </div>
     </header>
 
     <div class="upcomingEvents">
         <h2 >Upcoming Events</h2>
     </div>
 
-    <div class="calendar"></div>
+    <div class="calendar"><input type="date"></div>
 
     <div class="form">
         <div class="day" class="location"></div>
@@ -40,7 +50,7 @@
 
     
 
-    
+    <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
     
 </body>
 </html>
