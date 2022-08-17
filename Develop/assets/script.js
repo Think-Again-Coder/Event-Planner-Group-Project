@@ -1,13 +1,40 @@
-// textarea
+// form
 
-var locationText = document.getElementById('locationText');
-var foodText = document.getElementById('foodText');
-var bringText = document.getElementById('bringText');
+// button ids
+var locationBtn = document.getElementById('locationBtn');
+var foodBtn = document.getElementById('foodBtn');
+var bringBtn = document.getElementById('bringBtn');
 
+// input ids
 
+var addLocation = document.getElementById('addLocation');
+var addFood = document.getElementById('addFood');
+var whatToBring = document.getElementById('whatToBring');
 
+// button click
+locationBtn.addEventListener('click', displayResponse);
+
+function displayResponse(event){
+    event.preventDefault();
+
+    storeLocation();
+    storeFood();
+    storeWhatToBring();
+}
 
 // button functions
+function storeLocation (){
+    localStorage.setItem('location', addLocation.value);
+    
+}
+
+function storeFood (){
+    localStorage.setItem('food', addFood.value);
+}
+
+function storeWhatToBring (){
+    localStorage.setItem('whatToBring', whatToBring.value);
+}
 
 //calendar date 
 const calendars = bulmaCalendar.attach('[type="date"]', options);
@@ -28,4 +55,5 @@ if (element) {
 		console.log(datepicker.data.value());
 	});
 }
+
 
