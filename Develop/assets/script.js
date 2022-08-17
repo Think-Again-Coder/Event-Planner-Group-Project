@@ -1,3 +1,14 @@
+// textarea
+
+var locationText = document.getElementById('locationText');
+var foodText = document.getElementById('foodText');
+var bringText = document.getElementById('bringText');
+
+
+
+
+// button functions
+
 //calendar date 
 const calendars = bulmaCalendar.attach('[type="date"]', options);
 
@@ -17,3 +28,4 @@ if (element) {
 		console.log(datepicker.data.value());
 	});
 }
+
