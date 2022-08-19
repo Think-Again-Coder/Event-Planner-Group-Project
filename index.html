@@ -9,21 +9,22 @@
     <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./Develop/assets/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
     <title>Event Planner</title>
 
 </head>
 <body>
-    <header class="title hero is-link" id="mainHead">
+    <header class="title hero" id="mainHead" href="https://wallpaperaccess.com/full/186496.jpg">
         <div class="hero-body">
-          <p class="title">
-            Event Planner
+          <p class="title is-size-1">
+            Planet Plan-It
           </p>
           <p class="subtitle">
-            Your event starts here!
+            We'll Help You Plan A Star-Studded Event
           </p>
         </div>
     </header>
-    <div class="box columns is-centered is-1">
+    <div class="transparent box columns is-centered is-1">
     <!-- This is where the calendar will be viewed-->
     <div class="block column is-one-third" class="is-1">
         <div class="upcomingEvents block">
@@ -76,29 +77,35 @@
         
       </section>
 
-    <div class="selectedDay container is-centered tile is-ancestor">
+    <div class="selectedDay container is-fluid tile is-ancestor">
         <h2>Day Selected</h2>
-        <div class="choice1 box tile is-3 is-vertical" class="activityInput">
-            <h3 class="tile is-child field">Event Location</h3>
-            <h4 class="location1 field" id="eventLocation"></h4>
-
+        <div class="choice1 tile is-parent is-3" class="activityInput">
+            <article class="tile is-child box">
+                <h3 class="title">Event Location</h3>
+                <h4 class="location1" id="eventLocation"></h4>
+            </article>
         </div>
-        <div class="choice1 box tile is-3 is-vertical">
-            <h3 class="tile is-child field">Food Choices</h3>
-            <h4 class="food1 field" id="foodChoices"></h4>
-
+        <div class="choice1 tile is-parent is-3">
+            <article class="tile is-child box">
+                <h3 class="title">Food Choices</h3>
+                <h4 class="food1" id="foodChoices"></h4>
+            </article>
         </div>
-        <div class="choice1 box tile is-3 is-vertical">
-            <h3 class="tile is-child field">Activities</h3>
-            <ol type="1" id="activityList">
-                <li class="activity1">Basketball</li>
-            </ol>
+        <div class="choice1 tile is-parent is-3">
+            <article class="tile is-child box">
+                <h3 class="title">Activities</h3>
+                <ol type="1" id="activityList">
+                    <li class="activity1">Basketball</li>
+                </ol>
+            </article>
         </div>
-        <div class="choice1 box tile is-3 is-vertical">
-            <h3 class="tile is-child field">What to Bring</h3>
-            <ol type="1" id="bringList">
-                <li class="materials1">Clothes</li>
-            </ol>
+        <div class="choice1 tile is-parent is-3">
+            <article class="tile is-child box">
+                <h3 class="title">What to Bring</h3>
+                <ol type="1" id="bringList">
+                    <li class="materials1">Clothes</li>
+                </ol>
+            </article>
         </div>
 
     </div>

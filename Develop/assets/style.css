@@ -1,6 +1,18 @@
 * {
     /* border: solid 1px goldenrod; */
 }
+
+html {
+    background-image: url(https://wallpaperaccess.com/full/413655.jpg);
+    background-size: cover;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.transparent, .selectedDay {
+    opacity: 0.82;
+}
+
 h3 {
     font-size: 25px;
 }
@@ -12,3 +24,14 @@ h3 {
 .calendar {
    justify-content: center;
 }
+
+.hero {
+    background-image: url(https://wallpaperaccess.com/full/186496.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.title, .choice1 {
+    font-family: "Audiowide", sans-serif;
+}
+
