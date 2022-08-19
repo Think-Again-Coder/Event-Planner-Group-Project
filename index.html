@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
     <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./Develop/assets/style.css" />
     <title>Event Planner</title>
 
 </head>
 <body>
-    <header class="title hero is-link">
+    <header class="title hero is-link" id="mainHead">
         <div class="hero-body">
           <p class="title">
             Event Planner
@@ -22,67 +23,85 @@
           </p>
         </div>
     </header>
-    <div class="columns is-centered">
+    <div class="box columns is-centered is-1">
     <!-- This is where the calendar will be viewed-->
-    <div class="block column is-one-third" >
+    <div class="block column is-one-third" class="is-1">
         <div class="upcomingEvents block">
-            <h2 class="title">Upcoming Events</h2>
+            <h2 class="title">Upcoming Events: </h2>
         </div>
         <!-- Calendar inserted below here -->
-        <div class="calendar"><input type="date"></div>
+        <div class="calendar  is-centered"> <input type="date"></div>
     </div>
     <!-- This is our form for user input on event options -->
-    <section  class="column is-one-third">
+    <section  class="card column is-one-third">
         <form action="" method="GET" id="form">
             <h2 class="title block">Select below: </h2>
             <label class="activityInput title is-5">Event Location</label>
-            <div class="block">
-                <input type="text" name="locationBtn" id="addLocation" placeholder="Chicago">
+            <div class="block ">
+                <input class="input" type="text" name="locationBtn" id="addLocation" placeholder="Chicago">
                 <button type="submit" id="locationBtn">Add</button>
             </div>
 
             <label class="foodChoice title is-5">Food Choices</label>
             <div class="block">
-                <input type="text" name="foodBtn" id="addFood" placeholder="Hello Pandas">
+                <input class="input" type="text" name="foodBtn" id="addFood" placeholder="Hello Pandas">
                 <button type="submit" id="foodBtn">Add</button>
             </div>
 
             <label class="whatToBring title is-5">What to Bring</label>
             <div class="block">
-                <input type="text" name="bringBtn" id="whatToBring" placeholder="Clothes">
+                <input class="input" type="text" name="bringBtn" id="whatToBring" placeholder="Clothes">
                 <button type="submit" id="bringBtn">Add</button>
             </div>
+
             
         </form>
     </section>
     <!-- This section includes a form for the food, acitvities, and Weather options-->
     <div class="column is-one-third form title is-4">
-        <div class="day" class="location">Location</div>
-        <div class="foodOptions">Food</div>
-        <div class="weather" class="activities">Activities & Weather</div>
+        <div class="block day" class="location">Location: </div><div class="box">
+            Output in a box.
+          </div>
+        <div class="block foodOptions">Food: </div><div class="box">
+            Output in a box.
+          </div>
+        <div class="weather" class="activities">Activities & Weather: </div><div class="box">
+            Output in a box.
+          </div>
 
     </div>
     </div>
+    <!-- //created a space between the top and bottom sections -->
+    <section class="section">
+        
+      </section>
 
-    <div class="selectedDay">
+    <div class="selectedDay container is-centered tile is-ancestor">
         <h2>Day Selected</h2>
-        <div class="location" class="activityInput">
-            <h3>Event Location</h3>
+        <div class="choice1 box tile is-3 is-vertical" class="activityInput">
+            <h3 class="tile is-child field">Event Location</h3>
+            <h4 class="location1 field" id="eventLocation">Chicago</h4>
             <div></div>
-
+        </div>
+        <div class="choice1 box tile is-3 is-vertical">
+            <h3 class="tile is-child field">Food Choices</h3>
+            <h4 class="food1 field" id="foodChoices">Hello Pandas</h4>
 
         </div>
-        <div class="foodChoice">
-            <h3>Food Choices</h3>
-
+        <div class="choice1 box tile is-3 is-vertical">
+            <h3 class="tile is-child field">Activities</h3>
+            <ol type="1">
+                <li class="activity1">Basketball</li>
+            </ol>
         </div>
-        <div class="whatToBring">
-            <h3>What to Bring</h3>
-
+        <div class="choice1 box tile is-3 is-vertical">
+            <h3 class="tile is-child field">What to Bring</h3>
+            <ol type="1">
+                <li class="materials1">Clothes</li>
+            </ol>
         </div>
 
     </div>
-
 
     <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
     <script src="./Develop/assets/script.js"></script>

@@ -5,11 +5,16 @@ var locationBtn = document.getElementById('locationBtn');
 var foodBtn = document.getElementById('foodBtn');
 var bringBtn = document.getElementById('bringBtn');
 
-// input ids
+// ids in the input button
 
 var addLocation = document.getElementById('addLocation');
 var addFood = document.getElementById('addFood');
 var whatToBring = document.getElementById('whatToBring');
+
+// append choices fron javascript to html class
+var eventLocation = document.getElementById('eventLocation');
+var foodChoices = document.getElementById('foodChoices');
+
 
 // button click
 locationBtn.addEventListener('click', displayResponse);
@@ -18,8 +23,11 @@ function displayResponse(event){
     event.preventDefault();
 
     storeLocation();
-    storeFood();
-    storeWhatToBring();
+
+	var location = localStorage.getItem('location'); 
+
+	foodChoices.appendChild(); 
+
 }
 
 // button functions
@@ -35,6 +43,7 @@ function storeFood (){
 function storeWhatToBring (){
     localStorage.setItem('whatToBring', whatToBring.value);
 }
+
 
 //calendar date 
 const calendars = bulmaCalendar.attach('[type="date"]', options);
