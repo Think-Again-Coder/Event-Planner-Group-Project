@@ -6,10 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-    <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet">
+    <!-- <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./Develop/assets/style.css" />
+    <!-- Maps -->
+    <link rel="stylesheet" href="https://unpkg.com/ol-popup@4.0.0/src/ol-popup.css" />
+    <link rel="stylesheet" href="./Develop/assets/map.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css" type="text/css" />
+    <script src="https://unpkg.com/@esri/arcgis-rest-request@4.0.0/dist/bundled/request.umd.js"></script>
+    <script src="https://unpkg.com/@esri/arcgis-rest-routing@4.0.0/dist/bundled/routing.umd.js"></script>
+    <script src="https://unpkg.com/@esri/arcgis-rest-request@4.0.0/dist/bundled/request.umd.js"></script>
+    <script src="https://unpkg.com/@esri/arcgis-rest-geocoding@4.0.0/dist/bundled/geocoding.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/build/ol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js" type="text/javascript"></script>
+
+
     <title>Event Planner</title>
 
 </head>
@@ -67,8 +79,9 @@
     <div class="column is-one-third form title is-3">
         <div class="block day" class="location ">Location: </div>
         <div class="box title is-5">
-            Map in this box.
-          </div>
+            <div id="map"></div> 
+            <div id="directions"></div>
+        </div>
 
     </div>
     </div>
@@ -103,7 +116,12 @@
 
     </div>
 
-    <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script>
+
+    <!-- <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script> -->
     <script src="./Develop/assets/script.js"></script>
+
+    <!-- Maps -->
+    <script src="./Develop/assets/maps.js"></script>
+    
 </body>
 </html>
