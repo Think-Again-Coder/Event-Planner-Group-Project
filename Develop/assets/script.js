@@ -14,13 +14,18 @@ var whatToBring = document.getElementById('whatToBring');
 // append choices fron javascript to html class
 var eventLocation = document.getElementById('eventLocation');
 var foodChoices = document.getElementById('foodChoices');
+var bringList = document.getElementById('bringList');
 
 var locationEl = document.createElement('h2')
 var foodEl = document.createElement('h2')
+var bringEl = document.createElement('li')
 
 // button click
 locationBtn.addEventListener('click', storeLocation);
 foodBtn.addEventListener('click', storeFood);
+bringBtn.addEventListener('click', storeWhatToBring);
+
+foodArray = []
 
 
 // button functions
@@ -39,12 +44,21 @@ function storeFood (event){
 
     localStorage.setItem('food', addFood.value);
 	var food = localStorage.getItem('food'); 
-	foodEl.textContent = food;
+	foodArray.push(food);
+	foodEl.textContent = foodArray[0];
+	console.log(foodArray)
 	foodChoices.appendChild(foodEl); 
 }
 
-function storeWhatToBring (){
+function storeWhatToBring (event){
+	event.preventDefault();
+
     localStorage.setItem('whatToBring', whatToBring.value);
+	var bring = localStorage.getItem('whatToBring');
+	bringEl.textContent = bring;
+	bringList.appendChild(bringEl);
+
+
 }
 
 
