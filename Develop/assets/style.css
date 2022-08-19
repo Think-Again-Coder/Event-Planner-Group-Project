@@ -9,6 +9,8 @@ h3 {
     margin: 20px;
 }
 
-.calendar {
-   justify-content: center;
+.calendar input {
+    font-size: larger;
+    color: blue;
+    background-color: lightgray;
 }
