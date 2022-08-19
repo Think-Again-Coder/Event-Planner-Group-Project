@@ -15,29 +15,32 @@ var whatToBring = document.getElementById('whatToBring');
 var eventLocation = document.getElementById('eventLocation');
 var foodChoices = document.getElementById('foodChoices');
 
+var locationEl = document.createElement('h2')
+var foodEl = document.createElement('h2')
 
 // button click
-locationBtn.addEventListener('click', displayResponse);
+locationBtn.addEventListener('click', storeLocation);
+foodBtn.addEventListener('click', storeFood);
 
-function displayResponse(event){
-    event.preventDefault();
-
-    storeLocation();
-
-	var location = localStorage.getItem('location'); 
-
-	foodChoices.appendChild(); 
-
-}
 
 // button functions
-function storeLocation (){
+function storeLocation (event){
+	event.preventDefault();
+
     localStorage.setItem('location', addLocation.value);
+	var location = localStorage.getItem('location'); 
+	locationEl.textContent = location;
+	eventLocation.appendChild(locationEl); 
     
 }
 
-function storeFood (){
+function storeFood (event){
+	event.preventDefault();
+
     localStorage.setItem('food', addFood.value);
+	var food = localStorage.getItem('food'); 
+	foodEl.textContent = food;
+	foodChoices.appendChild(foodEl); 
 }
 
 function storeWhatToBring (){
