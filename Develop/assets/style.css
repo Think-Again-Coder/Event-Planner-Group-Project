@@ -1,7 +1,14 @@
+* {
+    /* border: solid 1px goldenrod; */
+}
 h3 {
     font-size: 25px;
 }
 
 .choice1 {
     margin: 20px;
+}
+
+.calendar {
+   justify-content: center;
 }
