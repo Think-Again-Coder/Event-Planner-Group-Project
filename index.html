@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,36 +14,43 @@
 
     <!-- Maps -->
     <link rel="stylesheet" href="https://unpkg.com/ol-popup@4.0.0/src/ol-popup.css" />
-    <link rel="stylesheet" href="./Develop/assets/map.css">
+    <!-- <link rel="stylesheet" href="./Develop/assets/map.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css" type="text/css" />
     <script src="https://unpkg.com/@esri/arcgis-rest-request@4.0.0/dist/bundled/request.umd.js"></script>
     <script src="https://unpkg.com/@esri/arcgis-rest-routing@4.0.0/dist/bundled/routing.umd.js"></script>
-    <script src="https://unpkg.com/@esri/arcgis-rest-request@4.0.0/dist/bundled/request.umd.js"></script>
     <script src="https://unpkg.com/@esri/arcgis-rest-geocoding@4.0.0/dist/bundled/geocoding.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/build/ol.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js" type="text/javascript"></script>
-    
+
+    <script src="https://unpkg.com/ol-popup@4.0.0"></script>
+
+
 
     <title>Event Planner</title>
 
 </head>
+
 <body>
     <header class="title hero" id="mainHead" href="https://wallpaperaccess.com/full/186496.jpg">
         <div class="hero-body">
-          <p class="title is-size-1">
-            Planet Plan-It
-          </p>
-          <p class="subtitle">
-            We'll Help You Plan A Star-Studded Event
-          </p>
+            <p class="title is-size-1">
+                Planet Plan-It
+            </p>
+            <p class="subtitle">
+                We'll Help You Plan A Star-Studded Event
+            </p>
         </div>
     </header>
     <div class="transparent box columns is-centered is-1">
-    <!-- This is where the calendar will be viewed-->
-    <div class="block column is-one-third" class="is-1">
-        <div class="upcomingEvents block">
-            <h2 class="title">Date of Event: </h2>
+        <!-- This is where the calendar will be viewed-->
+        <div class="block column is-one-third" class="is-1">
+            <div class="upcomingEvents block">
+                <h2 class="title">Date of Event: </h2>
+            </div>
+            <!-- Calendar inserted below here -->
+            <div class="calendar"> <input class="" type="date"></div>
         </div>
+
         <!-- Calendar inserted below here -->
         <div class="calendar"> <input class="" type="date"></div>
         <div> 
@@ -60,46 +68,45 @@
             <label class="activityInput title is-5"><span class="material-symbols-outlined">
                 location_on
                 </span>Event Location</label>
-            <div class="block ">
-                <input class="input is-primary" type="text" name="locationBtn" id="addLocation" placeholder="Chicago">
-                <button class="button m-1 is-primary is-light" type="submit" id="locationBtn">Add</button>
-            </div>
+                <div class="block ">
+                    <input class="input is-primary" type="text" name="locationBtn" id="addLocation" placeholder="Chicago">
+                    <button class="button m-1 is-primary is-light" type="submit" id="locationBtn">Add</button>
+                </div>
 
-            <label class="foodChoice title is-5"><span class="material-symbols-outlined">
+                <label class="foodChoice title is-5"><span class="material-symbols-outlined">
                 restaurant
                 </span>Food Choices</label>
-            <div class="block">
-                <input class="input is-warning" type="text" name="foodBtn" id="addFood" placeholder="Hello Pandas">
-                <button class="button m-1 is-warning is-light" type="submit" id="foodBtn">Add</button>
-            </div>
+                <div class="block">
+                    <input class="input is-warning" type="text" name="foodBtn" id="addFood" placeholder="Hello Pandas">
+                    <button class="button m-1 is-warning is-light" type="submit" id="foodBtn">Add</button>
+                </div>
 
-            <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
+                <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
                 umbrella
                 </span>What to Bring</label>
-            <div class="block">
-                <input class="input is-info" type="text" name="bringBtn" id="whatToBring" placeholder="Clothes">
-                <button class="m-1 button is-info is-light" type="submit" id="bringBtn">Add</button>
-            </div>
-            
-        </form>
-    </section>
-    <!-- This section includes a form for the food, acitvities, and Weather options-->
-    <div class="column is-one-third form title is-3">
-        <div class="block day" class="location ">Location: </div>
-        <div class="box title is-5">
-            <div id="map"></div> 
-            <div id="directions"></div>
-        </div>
+                <div class="block">
+                    <input class="input is-info" type="text" name="bringBtn" id="whatToBring" placeholder="Clothes">
+                    <button class="m-1 button is-info is-light" type="submit" id="bringBtn">Add</button>
+                </div>
 
-    </div>
+            </form>
+        </section>
+        <!-- This section includes a form for the food, acitvities, and Weather options-->
+        <div class="column is-one-third form title is-3">
+            <div class="block day" class="location ">Location: </div>
+            <div class="box title is-5">
+                <iframe id="mapIframe" src="./views/map.html" frameborder="0"></iframe>
+            </div>
+
+        </div>
     </div>
     <!-- //created a space between the top and bottom sections -->
     <section class="section title">
         <h2 class="title">Your Event Plan: </h2>
-      </section>
+    </section>
 
     <div class="selectedDay container is-fluid tile is-ancestor">
-        
+
         <div class="choice1 tile is-parent is-3" class="activityInput">
             <article class="tile is-child box">
                 <h3 class="title">Event Location</h3>
@@ -120,20 +127,20 @@
                 </ol>
             </article>
         </div>
-        
+
         <div class="choice1 box tile is-3 is-vertical">
             <h3 class="tile is-child field">What to Bring</h3>
             <ol type="1" id="bringList"></ol>
+
         </div>
 
     </div>
 
-
+    <!-- Maps -->
+    <script src="./Develop/assets/maps.js"></script>
     <!-- <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script> -->
     <script src="./Develop/assets/script.js"></script>
 
-    <!-- Maps -->
-    <script src="./Develop/assets/maps.js"></script>
-    
 </body>
+
 </html>
