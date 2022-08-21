@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="./Develop/assets/style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-    <title>Event Planner</title>
+    <title>Welcome to Planet Plan-It! </title>
 
 </head>
 <body>
-    <header class="title hero" id="mainHead" href="https://wallpaperaccess.com/full/186496.jpg">
+    <header class="title hero is-fluid" id="mainHead" href="https://wallpaperaccess.com/full/186496.jpg">
         <div class="hero-body">
           <p class="title is-size-1">
             Planet Plan-It
@@ -28,18 +28,17 @@
     <div class="transparent box columns is-centered is-1">
     <!-- This is where the calendar will be viewed-->
     <div class="block column is-one-third" class="is-1">
-        <div class="upcomingEvents block">
+        <div class="upcomingEvents block card is-3">
             <h2 class="title">Date of Event: </h2>
         </div>
         <!-- Calendar inserted below here -->
         <div class="calendar"> <input class="" type="date"></div>
     </div>
     <!-- This is our form for user input on event options -->
-    <section  class="card column is-one-third">
+    <section  class="card is-4 box column is-one-third">
         <form class="is-1" action="" method="GET" id="form">
-            <h2 class="title block">Details Below: </h2>
-            <label class="activityInput title is-5"><span class="material-symbols-outlined">
-                location_on
+            <h2 class="card title block">Details Below: </h2>
+            <label class="activityInput title is-5"><span class="material-symbols-outlined">location_on
                 </span>Event Location</label>
             <div class="block ">
                 <input class="input is-primary" type="text" name="locationBtn" id="addLocation" placeholder="Chicago">
@@ -66,7 +65,7 @@
     </section>
     <!-- This section includes a form for the food, acitvities, and Weather options-->
     <div class="column is-one-third form title is-3">
-        <div class="block day" class="location ">Location: </div>
+        <div class="card block day" class="location ">Location: </div>
         <div class="box title is-5">
             Map in this box.
           </div>
@@ -74,12 +73,11 @@
     </div>
     </div>
     <!-- //created a space between the top and bottom sections -->
-    <section class="section title">
+    <section class="transparent box section title">
         <h2 class="title">Your Event Plan: </h2>
       </section>
-
+      <!-- Thsi section below includes User input for the overall event criteria-->
     <div class="selectedDay container is-fluid tile is-ancestor">
-        
         <div class="choice1 tile is-parent is-3" class="activityInput">
             <article class="tile is-child box">
                 <h3 class="title">Event Location</h3>
@@ -94,7 +92,7 @@
         </div>
         <div class="choice1 tile is-parent is-3">
             <article class="tile is-child box">
-                <h3 class="title">Activities</h3>
+                <h3 class="title">Activities </h3>
                 <ol type="1" id="activityList">
                     <li class="activity1">Basketball</li>
                 </ol>
