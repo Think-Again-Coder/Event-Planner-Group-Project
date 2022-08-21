@@ -45,11 +45,10 @@ function storeFood (event){
     localStorage.setItem('food', addFood.value);
 	var food = localStorage.getItem('food'); 
 	foodArray.push(food);
-	for(let i = 0; i<= 5; i++){
-		foodEl.textContent = foodArray[i];
-		console.log(foodArray)
 
-	}
+	foodEl.textContent = foodArray[0];
+	console.log(foodArray)
+
 	foodChoices.appendChild(foodEl); 
 }
 
