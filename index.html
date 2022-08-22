@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <header class="title hero" id="mainHead" href="https://wallpaperaccess.com/full/186496.jpg">
+    <header class="title hero is-fluid" id="mainHead" href="https://wallpaperaccess.com/full/186496.jpg">
         <div class="hero-body">
             <p class="title is-size-1">
                 Planet Plan-It
@@ -42,10 +42,11 @@
         </div>
     </header>
     <div class="transparent box columns is-centered is-1">
-        <!-- This is where the calendar will be viewed-->
-        <div class="block column is-one-third" class="is-1">
-            <div class="upcomingEvents block">
-                <h2 class="title">Date of Event: </h2>
+    <!-- This is where the calendar will be viewed-->
+    <div class="block column is-one-third" class="is-1">
+        <div class="upcomingEvents block card is-3">
+            <h2 class="title">Date of Event: </h2>
+        </div>
         <!-- Calendar inserted below here -->
         <div class="calendar"> <input class="" type="date"></div>
         <div> 
@@ -57,11 +58,10 @@
         </div>
     </div>
     <!-- This is our form for user input on event options -->
-    <section  class="card column is-one-third">
+    <section  class="card is-4 box column is-one-third">
         <form class="is-1" action="" method="GET" id="form">
-            <h2 class="title block">Details Below: </h2>
-            <label class="activityInput title is-5"><span class="material-symbols-outlined">
-                location_on
+            <h2 class="card title block">Details Below: </h2>
+            <label class="activityInput title is-5"><span class="material-symbols-outlined">location_on
                 </span>Event Location</label>
                 <div class="block ">
                     <input class="input is-primary" type="text" name="locationBtn" id="addLocation" placeholder="Chicago">
@@ -96,10 +96,10 @@
         </div>
     </div>
     <!-- //created a space between the top and bottom sections -->
-    <section class="section title">
+    <section class="transparent box section title">
         <h2 class="title">Your Event Plan: </h2>
-    </section>
-
+      </section>
+      <!-- Thsi section below includes User input for the overall event criteria-->
     <div class="selectedDay container is-fluid tile is-ancestor">
 
         <div class="choice1 tile is-parent is-3" class="activityInput">
@@ -116,7 +116,7 @@
         </div>
         <div class="choice1 tile is-parent is-3">
             <article class="tile is-child box">
-                <h3 class="title">Activities</h3>
+                <h3 class="title">Activities </h3>
                 <ol type="1" id="activityList">
 
                 </ol>
