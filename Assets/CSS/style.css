@@ -44,3 +44,7 @@ h3 {
 #weatherDisplay {
     font-size: 90px;
 }
+
+li {
+    margin-left: 20px;
+}

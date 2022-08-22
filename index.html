@@ -43,7 +43,7 @@
             </p>
         </div>
     </header>
-    <div class="transparent box columns is-centered is-1">
+    <div class="transparent choice1 box columns is-centered is-full">
     <!-- This is where the calendar will be viewed-->
     <div class="block column is-one-quarter" class="is-1">
         <div class="upcomingEvents block card is-3">
@@ -78,13 +78,13 @@
                     <button class="button m-1 is-warning is-light" type="submit" id="foodBtn">Add</button>
                 </div>
 
-                <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
+                <!-- <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
                     umbrella
                     </span>Activities</label>
                     <div class="block">
                         <input class="input is-info" type="text" name="activityBtn" id="addActivity" placeholder="Sports">
                         <button class="m-1 button is-info is-light" type="submit" id="activityBtn">Add</button>
-                    </div>
+                    </div> -->
 
                 <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
                 umbrella
@@ -101,10 +101,10 @@
                       </div>
                 </div>
                 <!-- Code for input option for activities/what to bring -->
-                <div class="block">
+                <!-- <div class="block">
                     <input class="input is-info" type="text" name="bringBtn" id="whatToBring" placeholder="Clothes">
                     <button class="m-1 button is-info is-light" type="submit" id="bringBtn">Add</button>
-                </div>
+                </div> -->
 
                 
 
@@ -125,15 +125,15 @@
         <h2 class="title">Your Event Plan: </h2>
       </section>
       <!-- Thsi section below includes User input for the overall event criteria-->
-    <div class="selectedDay container tile is-ancestor">
+    <div class="selectedDay tile is-ancestor">
 
-        <div class="choice1 tile is-parent is-3" class="activityInput">
+        <div class="choice1 tile is-parent is-one-third" class="activityInput">
             <article class="tile is-child box">
                 <h3 class="title">Event Location</h3>
                 <h4 class="location1" id="eventLocation"></h4>
             </article>
         </div>
-        <div class="choice1 tile is-parent is-3">
+        <div class="choice1 tile is-parent is-one-third">
             <article class="tile is-child box">
                 <h3 class="title">Food Choices</h3>
                 <ol>
@@ -143,7 +143,7 @@
                 </ol>
             </article>
         </div>
-        <div class="choice1 tile is-parent is-3">
+        <!-- <div class="choice1 tile is-parent is-3">
             <article class="tile is-child box">
                 <h3 class="title">Activities </h3>
                 <ol>
@@ -152,16 +152,17 @@
                     <li type="1" id="activityChoice3"></li>
                 </ol>
             </article>
-        </div>
+        </div> -->
 
-        <div class="choice1 box tile is-3 is-vertical">
-            <h3 class="tile is-child field">What to Bring</h3>
+        <div class="choice1 tile is-parent is-one-third">
+            <article class="tile is-child box">
+            <h3 class="title">What to Bring</h3>
             <ol>
                 <li type="1" id="bringItem1"></li>
                 <li type="1" id="bringItem2"></li>
                 <li type="1" id="bringItem3"></li>
             </ol>
-
+            </article>
         </div>
 
     </div>
