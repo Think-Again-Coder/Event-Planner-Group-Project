@@ -44,3 +44,15 @@ h3 {
 #weatherDisplay {
     font-size: 90px;
 }
+
+#bringItem1, #bringItem2, #bringItem3 {
+    margin-left: 12px;
+}
+
+#activityChoice1, #activityChoice2, #activityChoice3 {
+    margin-left: 12px;
+}
+
+#foodChoice1, #foodChoice2, #foodChoice3 {
+    margin-left: 12px;
+}
