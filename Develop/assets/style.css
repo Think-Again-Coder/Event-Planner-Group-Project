@@ -6,7 +6,6 @@ html {
     background-image: url(https://wallpaperaccess.com/full/413655.jpg);
     background-size: cover;
     min-height: 100%;
-    overflow: hidden;
 }
 
 .transparent, .selectedDay {
