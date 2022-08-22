@@ -8,8 +8,7 @@ html {
     min-height: 100%;
 }
 
-.transparent,
-.selectedDay {
+.transparent, .selectedDay {
     opacity: 0.82;
 }
 
@@ -33,14 +32,11 @@ h3 {
     background-position: center;
 }
 
-.title,
-.choice1 {
+.title, .choice1 {
     font-family: "Audiowide", sans-serif;
 }
 
-#temp0,
-#wind0,
-#humidity0 {
+#temp0, #wind0, #humidity0 {
     font-size: x-large;
     margin: 1px;
 }
@@ -49,7 +45,6 @@ h3 {
     font-size: 90px;
 }
 
-<<<<<<< HEAD:Develop/assets/style.css
 #bringItem1, #bringItem2, #bringItem3 {
     margin-left: 12px;
 }
@@ -61,12 +56,3 @@ h3 {
 #foodChoice1, #foodChoice2, #foodChoice3 {
     margin-left: 12px;
 }
-=======
-#mapIframe {
-    width: 100%;
-    height: 100%;
-}
-li {
-    margin-left: 20px;
-}
->>>>>>> 70e7068620de1e94e23744a2eb3b0182ae4efbb9:Assets/CSS/style.css

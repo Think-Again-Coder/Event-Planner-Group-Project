@@ -30,6 +30,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bulma-calendar@6.0.7/dist/css/bulma-calendar.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.18/dist/js/bulma-calendar.min.js"></script>
 
+
+
     <title>Planet Plan-It</title>
 
 </head>
@@ -61,11 +63,12 @@
                 <div class="" id="humidity0"></div>
             </div>
         </div>
-        <!-- This is our form for user input on event options -->
-        <section class="card is-5 box column is-one-third">
-            <form class="is-1" action="" method="GET" id="form">
-                <h2 class="card title block">Details Below: </h2>
-                <label class="activityInput title is-5"><span class="material-symbols-outlined">location_on
+
+    <!-- This is our form for user input on event options -->
+    <section  class="card is-5 box column is-one-third">
+        <form class="is-1" action="" method="GET" id="form">
+            <h2 class="card title block">Details Below: </h2>
+            <label class="activityInput title is-5"><span class="material-symbols-outlined">location_on
                 </span>Event Location</label>
                 <div class="block ">
                     <input class="input is-primary" type="text" name="locationBtn" id="addLocation" placeholder="Chicago">
@@ -97,7 +100,8 @@
                         </select>
                     </div>
                 </div>
-                <!-- Code for input option for activities/what to bring -->
+
+                 Code for input option for activities/what to bring -->
                 <div class="block">
                     <input class="input is-info" type="text" name="bringInput" id="whatToBring" placeholder="Clothes">
                     <button class="m-1 button is-info is-light" type="button" id="bringBtn">Add</button>
@@ -105,10 +109,10 @@
             </form>
         </section>
         <!-- This section includes a form for the food, acitvities, and Weather options-->
-        <div class="column is-one-third form title is-3">
+        <div class="column is-one-third form title is-3 ">
             <div class="block day card box" class="location ">Location: </div>
-            <div class="box title is-5">
-                <iframe id="mapIframe" src="./map.html" frameborder="0"></iframe>
+            <div class="box title is-2">
+                <iframe id="mapIframe" src="./map.html" frameborder="0" height="450" width="450"></iframe>
             </div>
 
         </div>
@@ -119,8 +123,8 @@
         <h2 class="title">Your Event Plan: </h2>
       </section>
       <!-- Thsi section below includes User input for the overall event criteria-->
-    <div class="selectedDay tile is-ancestor">
 
+    <div class="selectedDay tile is-ancestor">
 <div class="choice1 tile is-parent is-one-third" class="activityInput">
             <article class="tile is-child box">
                 <h3 class="title">Event Location</h3>
