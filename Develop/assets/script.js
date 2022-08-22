@@ -45,6 +45,13 @@ var humidity0 = document.getElementById('humidity0');
 // var humidity = []
 // var weatherDisplay = []
 
+// moment.js time
+var currentDay= document.getElementById('currentDay')
+
+function getDay(){
+currentDay.textContent = moment().format('MMMM Do YYYY');
+}
+getDay();
 
 // button functions
 function storeLocation (event){
@@ -121,7 +128,9 @@ function cityLocation(){
             var lon = data[0].lon
             cityCoordinates = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&units=imperial&appid=${api.key}`
             console.log(cityCoordinates)
+	
 			cityWeather();
+			
 		})
 }
 
