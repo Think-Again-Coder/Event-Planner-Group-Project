@@ -6,28 +6,38 @@ const api = {
 var locationBtn = document.getElementById('locationBtn');
 var foodBtn = document.getElementById('foodBtn');
 var bringBtn = document.getElementById('bringBtn');
+var activityBtn = document.getElementById('activityBtn')
 
 // ids in the input button
 
 var addLocation = document.getElementById('addLocation');
 var addFood = document.getElementById('addFood');
 var whatToBring = document.getElementById('whatToBring');
+var addActivity = document.getElementById('addActivity');
 
 // append choices fron javascript to html class
 var eventLocation = document.getElementById('eventLocation');
-var foodChoices = document.getElementById('foodChoices');
-var bringList = document.getElementById('bringList');
-
 var locationEl = document.createElement('h2')
-var foodEl = document.createElement('h2')
-var bringEl = document.createElement('li')
+
+var foodChoice1 = document.getElementById('foodChoice1');
+var foodChoice2 = document.getElementById('foodChoice2');
+var foodChoice3 = document.getElementById('foodChoice3');
+
+var bringItem1 = document.getElementById('bringItem1');
+var bringItem2 = document.getElementById('bringItem2');
+var bringItem3 = document.getElementById('bringItem3');
+
+var activityChoice1 = document.getElementById('activityChoice1');
+var activityChoice2 = document.getElementById('activityChoice2');
+var activityChoice3 = document.getElementById('activityChoice3');
+
 
 // button click
 locationBtn.addEventListener('click', storeLocation);
 foodBtn.addEventListener('click', storeFood);
 bringBtn.addEventListener('click', storeWhatToBring);
+activityBtn.addEventListener('click', storeActivity);
 
-foodArray = []
 
 // weather variables
 var weatherDisplay = document.getElementById('weatherDisplay');
@@ -65,28 +75,72 @@ function storeLocation (event){
     cityLocation();
 }
 
+var foodArray = []
 function storeFood (event){
 	event.preventDefault();
 
-    localStorage.setItem('food', addFood.value);
-	var food = localStorage.getItem('food'); 
-	foodArray.push(food);
-
-	foodEl.textContent = foodArray[0];
+	if(foodArray.length == 0){
+		localStorage.setItem('food1', addFood.value);
+		var food1 = localStorage.getItem('food1'); 
+		foodArray.push(food1);
+		foodChoice1.textContent = foodArray[0];
+	}else if(foodArray.length == 1){
+		localStorage.setItem('food2', addFood.value);
+		var food2 = localStorage.getItem('food2'); 
+		foodArray.push(food2);
+		foodChoice2.textContent = foodArray[1];
+	}else if(foodArray.length == 2){
+		localStorage.setItem('food3', addFood.value);
+		var food3 = localStorage.getItem('food3'); 
+		foodArray.push(food3);
+		foodChoice3.textContent = foodArray[2];
+	}
 	console.log(foodArray)
-
-	foodChoices.appendChild(foodEl); 
 }
 
+var bringArray = []
 function storeWhatToBring (event){
 	event.preventDefault();
 
-    localStorage.setItem('whatToBring', whatToBring.value);
-	var bring = localStorage.getItem('whatToBring');
-	bringEl.textContent = bring;
-	bringList.appendChild(bringEl);
+	if(bringArray.length == 0){
+		localStorage.setItem('bring1', whatToBring.value);
+		var bring1 = localStorage.getItem('bring1');
+		bringArray.push(bring1)
+		bringItem1.textContent = bringArray[0];
+	}else if(bringArray.length == 1){
+		localStorage.setItem('bring2', whatToBring.value);
+		var bring2 = localStorage.getItem('bring2');
+		bringArray.push(bring2)
+		bringItem2.textContent = bringArray[1];
+	}else if(bringArray.length == 2){
+		localStorage.setItem('bring3', whatToBring.value);
+		var bring3 = localStorage.getItem('bring3');
+		bringArray.push(bring3)
+		bringItem3.textContent = bringArray[2];
+	}
 
+}
 
+var activityArray = [];
+function storeActivity(event){
+	event.preventDefault();
+
+	if(activityArray.length == 0){
+		localStorage.setItem('activity1', addActivity.value);
+		var activity1 = localStorage.getItem('activity1');
+		activityArray.push(activity1)
+		activityChoice1.textContent = activityArray[0];
+	}else if(activityArray.length == 1){
+		localStorage.setItem('activity2', addActivity.value);
+		var activity2 = localStorage.getItem('activity2');
+		activityArray.push(activity2)
+		activityChoice2.textContent = activityArray[1];
+	}else if(activityArray.length == 2){
+		localStorage.setItem('activity3', addActivity.value);
+		var activity3 = localStorage.getItem('activity3');
+		activityArray.push(activity3)
+		activityChoice3.textContent = activityArray[2];
+	}
 }
 
 
@@ -167,3 +221,5 @@ function iconDisplay(){
         weatherDisplay.textContent = '🌞'
     }
 }
+
+
