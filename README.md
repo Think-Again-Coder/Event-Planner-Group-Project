@@ -11,10 +11,11 @@ This application was built to help business events planners easily create a busi
 
 The event planner was built using the Bulma CSS framework and a variety of API's. 
 #
-The following API's:
+### The following API's:
 1. OpenWeather API
 2. Arcgis Location API
 3. Google Fonts API
+4. Moment API
 
 ### Images here: [Website Screenshots](https:). 
 

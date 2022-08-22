@@ -36,3 +36,11 @@ h3 {
     font-family: "Audiowide", sans-serif;
 }
 
+#temp0, #wind0, #humidity0 {
+    font-size: x-large;
+    margin: 1px;
+}
+
+#weatherDisplay {
+    font-size: 90px;
+}
