@@ -34,158 +34,173 @@ index.html body script tag for maps :
 
 ==========================================
 */
+
 const apiKey = "AAPK12422d1791b94a438e41c1657159c7f6mfWjO2hJolUDB-rypqwWguRR3bZDMQjqUeJUC8Y0Bz-P9kPxraFEzourT3pFHsyP";
-let map = new ol.Map({ target: "map" });
+let directions;
+let mapElement;
+let map;
+let mapIframe = document.getElementById("mapIframe");
+let mapTags;
+mapIframe.addEventListener("load", function() {
+    directions = mapIframe.contentWindow.document.getElementById("directions");
+    mapElement = mapIframe.contentWindow.document.getElementById("map")
+    map = new ol.Map({ target: mapElement });
+    mapTags = mapIframe.contentWindow.document;
+});
+
+// const mapElement = document.getElementById("mapIframe").contentWindow.document.getElementById("map");
+
 
 // Takes two arrays of coordinates (start[longitude, latitude], end[longitude, latitude])
-function getDirections(startCoords, endCoords){
-  map.getOverlays().clear();
-  map.setLayerGroup(new ol.layer.Group());
+function getDirections(startCoords, endCoords) {
+    map.getOverlays().clear();
+    map.setLayerGroup(new ol.layer.Group());
 
-  let centerCoords = [(startCoords[0]+endCoords[0])/2,(startCoords[1]+endCoords[1])/2];
+    let centerCoords = [(startCoords[0] + endCoords[0]) / 2, (startCoords[1] + endCoords[1]) / 2];
 
-  const view = new ol.View({
+    const view = new ol.View({
 
-    center: ol.proj.fromLonLat(centerCoords),
+        center: ol.proj.fromLonLat(centerCoords),
 
-    zoom: 12
-  });
-  map.setView(view);
+        zoom: 12
+    });
+    map.setView(view);
 
-  let startLayer, endLayer, routeLayer;
-  function addCircleLayers() {
+    let startLayer, endLayer, routeLayer;
 
-    startLayer = new ol.layer.Vector({
-      style: new ol.style.Style({
-        image: new ol.style.Circle({
-          radius: 6,
-          fill: new ol.style.Fill({ color: "white" }),
-          stroke: new ol.style.Stroke({ color: "black", width: 2 })
+    function addCircleLayers() {
+
+        startLayer = new ol.layer.Vector({
+            style: new ol.style.Style({
+                image: new ol.style.Circle({
+                    radius: 6,
+                    fill: new ol.style.Fill({ color: "white" }),
+                    stroke: new ol.style.Stroke({ color: "black", width: 2 })
+                })
+            })
+        });
+        map.addLayer(startLayer);
+        endLayer = new ol.layer.Vector({
+            style: new ol.style.Style({
+                image: new ol.style.Circle({
+                    radius: 7,
+                    fill: new ol.style.Fill({ color: "black" }),
+                    stroke: new ol.style.Stroke({ color: "white", width: 2 })
+                })
+            })
+        });
+
+        map.addLayer(endLayer);
+    }
+
+    const geojson = new ol.format.GeoJSON({
+        defaultDataProjection: "EPSG:4326",
+        featureProjection: "EPSG:3857"
+    });
+
+    updateRoute(startCoords, endCoords);
+
+    function addRouteLayer() {
+        routeLayer = new ol.layer.Vector({
+            style: new ol.style.Style({
+                stroke: new ol.style.Stroke({ color: "hsl(205, 100%, 50%)", width: 4, opacity: 0.6 })
+            })
+        });
+        map.addLayer(routeLayer);
+    }
+
+    function updateRoute() {
+
+        const authentication = arcgisRest.ApiKeyManager.fromKey(apiKey);
+
+        arcgisRest
+            .solveRoute({
+                stops: [startCoords, endCoords],
+                authentication
+            })
+
+        .then((response) => {
+
+            routeLayer.setSource(
+                new ol.source.Vector({
+                    features: geojson.readFeatures(response.routes.geoJson)
+                })
+            );
+
+            const directionsHTML = response.directions[0].features.map((f) => f.attributes.text).join("<br/>");
+            let direactionsBox = document.getElementById("directions")
+            direactionsBox.style.opacity = 100;
+            direactionsBox.innerHTML = directionsHTML;
+            direactionsBox.style.display = "block";
         })
-      })
-    });
-    map.addLayer(startLayer);
-    endLayer = new ol.layer.Vector({
-      style: new ol.style.Style({
-        image: new ol.style.Circle({
-          radius: 7,
-          fill: new ol.style.Fill({ color: "black" }),
-          stroke: new ol.style.Stroke({ color: "white", width: 2 })
-        })
-      })
-    });
 
-    map.addLayer(endLayer);
-  }
+        .catch((error) => {
+            alert("There was a problem using the geocoder. See the console for details.");
+            console.error(error);
+        });
 
-  const geojson = new ol.format.GeoJSON({
-    defaultDataProjection: "EPSG:4326",
-    featureProjection: "EPSG:3857"
-  });
+    }
 
-  updateRoute(startCoords, endCoords);
+    const basemapId = "ArcGIS:Navigation";
+    const basemapURL = "https://basemaps-api.arcgis.com/arcgis/rest/services/styles/" + basemapId + "?type=style&token=" + apiKey;
 
-  function addRouteLayer() {
-    routeLayer = new ol.layer.Vector({
-      style: new ol.style.Style({
-        stroke: new ol.style.Stroke({ color: "hsl(205, 100%, 50%)", width: 4, opacity: 0.6 })
-      })
-    });
-    map.addLayer(routeLayer);
-  }
+    olms(map, basemapURL)
+        .then(function(map) {
 
-  function updateRoute() {
-
-    const authentication = arcgisRest.ApiKeyManager.fromKey(apiKey);
-
-    arcgisRest
-      .solveRoute({
-        stops: [startCoords, endCoords],
-        authentication
-      })
-
-      .then((response) => {
-
-        routeLayer.setSource(
-          new ol.source.Vector({
-            features: geojson.readFeatures(response.routes.geoJson)
-          })
-        );
-
-        const directionsHTML = response.directions[0].features.map((f) => f.attributes.text).join("<br/>");
-        let direactionsBox = document.getElementById("directions")
-        direactionsBox.style.opacity = 100;
-        direactionsBox.innerHTML = directionsHTML;
-        direactionsBox.style.display = "block";
-      })
-
-      .catch((error) => {
-        alert("There was a problem using the geocoder. See the console for details.");
-        console.error(error);
-      });
-
-  }
-
-  const basemapId = "ArcGIS:Navigation";
-  const basemapURL = "https://basemaps-api.arcgis.com/arcgis/rest/services/styles/" + basemapId + "?type=style&token=" + apiKey;
-
-  olms(map, basemapURL)
-    .then(function (map) {
-
-      addCircleLayers();
-      addRouteLayer();
-    });
+            addCircleLayers();
+            addRouteLayer();
+        });
 }
 // Takes a string as the address
-function getLocation(address){
-  document.getElementById("directions").style.opacity = 0;
-  map.setLayerGroup(new ol.layer.Group());
-  map.setView(
-    new ol.View({
-      center: ol.proj.fromLonLat([151.2093, -33.8688]),
-      zoom: 15
-    })
-  );
+function getLocation(address) {
+    mapTags.getElementById("directions").style.opacity = 0;
+    map.setLayerGroup(new ol.layer.Group());
+    map.setView(
+        new ol.View({
+            center: ol.proj.fromLonLat([151.2093, -33.8688]),
+            zoom: 15
+        })
+    );
 
-  const basemapId = "ArcGIS:Navigation";
-  const basemapURL = "https://basemaps-api.arcgis.com/arcgis/rest/services/styles/" + basemapId + "?type=style&token=" + apiKey;
+    const basemapId = "ArcGIS:Navigation";
+    const basemapURL = "https://basemaps-api.arcgis.com/arcgis/rest/services/styles/" + basemapId + "?type=style&token=" + apiKey;
 
-  olms(map, basemapURL);
+    olms(map, basemapURL);
 
-  const popup = new Popup();
-  map.addOverlay(popup);
+    const popup = new Popup();
+    map.addOverlay(popup);
 
     const query = address;
     const authentication = arcgisRest.ApiKeyManager.fromKey(apiKey);
     const center = ol.proj.transform(map.getView().getCenter(), "EPSG:3857", "EPSG:4326");
 
     arcgisRest
-      .geocode({
-        singleLine: query,
-        authentication,
+        .geocode({
+            singleLine: query,
+            authentication,
 
-        params: {
-          outFields: "*",
-          location: center.join(","),
-          outSR: 3857 
-        }
-      })
+            params: {
+                outFields: "*",
+                location: center.join(","),
+                outSR: 3857
+            }
+        })
 
-      .then((response) => {
+    .then((response) => {
         const result = response.candidates[0];
         if (!result === 0) {
-          alert("That query didn't match any geocoding results.");
-          return;
+            alert("That query didn't match any geocoding results.");
+            return;
         }
 
         const coords = [result.location.x, result.location.y];
 
         popup.show(coords, result.attributes.LongLabel);
         map.getView().setCenter(coords);
-      })
+    })
 
-      .catch((error) => {
+    .catch((error) => {
         alert("There was a problem using the geocoder. See the console for details.");
         console.error(error);
-      });
+    });
 }
