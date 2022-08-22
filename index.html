@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-    <link rel="stylesheet" href="./Develop/assets/style.css" />
-    <link rel="icon" type="image/x-icon" href="./Develop/assets/images/planet_plan_it.jpg" />
+
+    <link rel="stylesheet" href="./Assets/CSS/style.css" />
+    <link rel="icon" type="image/x-icon" href="./Assets/Images/planet_plan_it.jpg" />
+
 
     <!-- Maps -->
     <link rel="stylesheet" href="https://unpkg.com/ol-popup@4.0.0/src/ol-popup.css" />
@@ -90,6 +92,18 @@
                 umbrella
                 </span>What to Bring</label>
                 <div class="block">
+                    <div class="select is-medium">
+                        <select id="bringBtn">
+                          <option>Select Activity</option>
+                          <option id="basket">Basketball</option> 
+                          <option id="volley">Volleyball</option>
+                          <option id="smores">S'mores</option>
+                          <option id="bbq">BBQ</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Code for input option for activities/what to bring -->
+                <div class="block">
                     <input class="input is-info" type="text" name="bringBtn" id="whatToBring" placeholder="Clothes">
                     <button class="m-1 button is-info is-light" type="submit" id="bringBtn">Add</button>
                 </div>
@@ -102,7 +116,7 @@
         <div class="column is-one-third form title is-3">
             <div class="block day card box" class="location ">Location: </div>
             <div class="box title is-5">
-                <iframe id="mapIframe" src="./views/map.html" frameborder="0"></iframe>
+                <iframe id="mapIframe" src="./map.html" frameborder="0"></iframe>
             </div>
 
         </div>
@@ -156,10 +170,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- Maps -->
-    <script src="./Develop/assets/maps.js"></script>
+    <script src="./Assets/JS/maps.js"></script>
     <!-- <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script> -->
-    <script src="./Develop/assets/script.js"></script>
-
+    <script src="./Assets/JS/script.js"></script>
 </body>
 
 </html>
