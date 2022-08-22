@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-    <link rel="stylesheet" href="./Develop/assets/style.css" />
-    <link rel="icon" type="image/x-icon" href="./Develop/assets/images/planet_plan_it.jpg"/>
+
+    <link rel="stylesheet" href="./Assets/CSS/style.css" />
+    <link rel="icon" type="image/x-icon" href="./Assets/Images/planet_plan_it.jpg" />
+
 
     <!-- Maps -->
     <link rel="stylesheet" href="https://unpkg.com/ol-popup@4.0.0/src/ol-popup.css" />
@@ -45,24 +47,23 @@
             </p>
         </div>
     </header>
-    <div class="transparent box columns is-centered is-1">
-    <!-- This is where the calendar will be viewed-->
-    <div class="block column is-one-quarter" class="is-1">
-        <div class="upcomingEvents block card is-3">
-            <h2 class="title">Date of Event: </h2>
+    <div class="transparent choice1 box columns is-centered is-full">
+        <!-- This is where the calendar will be viewed-->
+        <div class="block column is-one-quarter is-1">
+            <div class="upcomingEvents block card is-3">
+                <h2 class="title">Date of Event: </h2>
+            </div>
+            <!-- Calendar inserted below here -->
+            <div class="calendar block"> <input id="datePicker" class="" type="date"></div>
+            <div>
+                <h2 class="title block is-mobile">Weather</h2>
+                <div class="" id="weatherDisplay"></div>
+                <div class="" id="temp0"></div>
+                <div class="" id="wind0"></div>
+                <div class="" id="humidity0"></div>
+            </div>
         </div>
-        <!-- Calendar inserted below here -->
-        <div class="calendar block"> <input class="" type="date"></div>
-        <div> 
 
-            <h2 class="title block is-mobile">Weather</h2>
-
-            <div class="" id="weatherDisplay"></div>
-            <div class="" id="temp0"></div>
-            <div class="" id="wind0"></div>
-            <div class="" id="humidity0"></div>
-        </div>
-    </div>
     <!-- This is our form for user input on event options -->
     <section  class="card is-5 box column is-one-third">
         <form class="is-1" action="" method="GET" id="form">
@@ -71,7 +72,7 @@
                 </span>Event Location</label>
                 <div class="block ">
                     <input class="input is-primary" type="text" name="locationBtn" id="addLocation" placeholder="Chicago">
-                    <button class="button m-1 is-primary is-light" type="submit" id="locationBtn">Add</button>
+                    <button class="button m-1 is-primary is-light" type="button" id="locationBtn">Add</button>
                 </div>
 
                 <label class="foodChoice title is-5"><span class="material-symbols-outlined">
@@ -79,34 +80,39 @@
                 </span>Food Choices</label>
                 <div class="block">
                     <input class="input is-warning" type="text" name="foodBtn" id="addFood" placeholder="Hello Pandas">
-                    <button class="button m-1 is-warning is-light" type="submit" id="foodBtn">Add</button>
+                    <button class="button m-1 is-warning is-light" type="button" id="foodBtn">Add</button>
                 </div>
 
-                <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
+                <!-- <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
                     umbrella
                     </span>Activities</label>
-                    <div class="block">
-                        <input class="input is-info" type="text" name="activityBtn" id="addActivity" placeholder="Sports">
-                        <button class="m-1 button is-info is-light" type="submit" id="activityBtn">Add</button>
-                    </div>
-
+                <div class="block">
+                    <input class="input is-info" type="text" name="activityBtn" id="addActivity" placeholder="Sports">
+                    <button class="m-1 button is-info is-light" type="button" id="activityBtn">Add</button>
+                </div>
                 <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
                 umbrella
                 </span>What to Bring</label>
                 <div class="block">
-                    <input class="input is-info" type="text" name="bringBtn" id="whatToBring" placeholder="Clothes">
-                    <button class="m-1 button is-info is-light" type="submit" id="bringBtn">Add</button>
+                    <div class="select is-medium">
+                        <select id="bringSelect">
+                          <option>Select Activity</option>
+                        </select>
+                    </div>
                 </div>
 
-                
-
+                 Code for input option for activities/what to bring -->
+                <div class="block">
+                    <input class="input is-info" type="text" name="bringInput" id="whatToBring" placeholder="Clothes">
+                    <button class="m-1 button is-info is-light" type="button" id="bringBtn">Add</button>
+                </div>
             </form>
         </section>
         <!-- This section includes a form for the food, acitvities, and Weather options-->
         <div class="column is-one-third form title is-3 ">
             <div class="block day card box" class="location ">Location: </div>
             <div class="box title is-2">
-                <iframe id="mapIframe" src="./views/map.html" frameborder="0" height="450" width="450"></iframe>
+                <iframe id="mapIframe" src="./map.html" frameborder="0" height="450" width="450"></iframe>
             </div>
 
         </div>
@@ -117,41 +123,36 @@
         <h2 class="title">Your Event Plan: </h2>
       </section>
       <!-- Thsi section below includes User input for the overall event criteria-->
-    <div class="selectedDay container tile is-ancestor ">
-        <div class="choice1 tile is-parent is-3" class="activityInput">
+
+    <div class="selectedDay tile is-ancestor">
+<div class="choice1 tile is-parent is-one-third" class="activityInput">
             <article class="tile is-child box">
                 <h3 class="title">Event Location</h3>
                 <h4 class="location1" id="eventLocation"></h4>
             </article>
         </div>
-        <div class="choice1 tile is-parent is-3">
+        <div class="choice1 tile is-parent is-one-third">
             <article class="tile is-child box">
                 <h3 class="title">Food Choices</h3>
-                <ol>
-                    <li class="food1" id="foodChoice1"></li>
-                    <li class="food1" id="foodChoice2"></li>
-                    <li class="food1" id="foodChoice3"></li>
-                </ol>
+                <ol id="food"></ol>
             </article>
         </div>
-        <div class="choice1 tile is-parent is-3">
+        <!-- <div class="choice1 tile is-parent is-3">
             <article class="tile is-child box">
                 <h3 class="title">Activities </h3>
-                <ol>
-                    <li type="1" id="activityChoice1"></li>
-                    <li type="1" id="activityChoice2"></li>
-                    <li type="1" id="activityChoice3"></li>
-                </ol>
+                <ol id="activity"></ol>
             </article>
-        </div>
+        </div> -->
 
-        <div class="choice1 box tile is-3 is-vertical">
-            <h3 class="title tile is-child field">What to Bring</h3>
-            <ol class="">
+        <div class="choice1 tile is-parent is-one-third">
+            <article class="tile is-child box">
+            <h3 class="title">What to Bring</h3>
+            <ol>
                 <li type="1" id="bringItem1"></li>
                 <li type="1" id="bringItem2"></li>
                 <li type="1" id="bringItem3"></li>
             </ol>
+            </article>
 
         </div>
 
@@ -159,10 +160,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <!-- Maps -->
-    <script src="./Develop/assets/maps.js"></script>
+    <script src="./Assets/JS/maps.js"></script>
     <!-- <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script> -->
-    <script src="./Develop/assets/script.js"></script>
-   
+    <script src="./Assets/JS/script.js"></script>
 </body>
 
 </html>

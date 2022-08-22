@@ -1,0 +1,72 @@
+* {
+    /* border: solid 1px goldenrod; */
+}
+
+html {
+    background-image: url(https://wallpaperaccess.com/full/413655.jpg);
+    background-size: cover;
+    min-height: 100%;
+}
+
+.transparent,
+.selectedDay {
+    opacity: 0.82;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+.choice1 {
+    margin: 20px;
+}
+
+.calendar input {
+    font-size: larger;
+    color: blue;
+    background-color: lightgray;
+}
+
+.hero {
+    background-image: url(https://wallpaperaccess.com/full/186496.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.title,
+.choice1 {
+    font-family: "Audiowide", sans-serif;
+}
+
+#temp0,
+#wind0,
+#humidity0 {
+    font-size: x-large;
+    margin: 1px;
+}
+
+#weatherDisplay {
+    font-size: 90px;
+}
+
+<<<<<<< HEAD:Develop/assets/style.css
+#bringItem1, #bringItem2, #bringItem3 {
+    margin-left: 12px;
+}
+
+#activityChoice1, #activityChoice2, #activityChoice3 {
+    margin-left: 12px;
+}
+
+#foodChoice1, #foodChoice2, #foodChoice3 {
+    margin-left: 12px;
+}
+=======
+#mapIframe {
+    width: 100%;
+    height: 100%;
+
+li {
+    margin-left: 20px;
+}
+>>>>>>> 70e7068620de1e94e23744a2eb3b0182ae4efbb9:Assets/CSS/style.css
