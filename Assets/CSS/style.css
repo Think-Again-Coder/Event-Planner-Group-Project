@@ -8,7 +8,8 @@ html {
     min-height: 100%;
 }
 
-.transparent, .selectedDay {
+.transparent,
+.selectedDay {
     opacity: 0.82;
 }
 
@@ -32,15 +33,23 @@ h3 {
     background-position: center;
 }
 
-.title, .choice1 {
+.title,
+.choice1 {
     font-family: "Audiowide", sans-serif;
 }
 
-#temp0, #wind0, #humidity0 {
+#temp0,
+#wind0,
+#humidity0 {
     font-size: x-large;
     margin: 1px;
 }
 
 #weatherDisplay {
     font-size: 90px;
+}
+
+#mapIframe {
+    width: 100%;
+    height: 100%;
 }

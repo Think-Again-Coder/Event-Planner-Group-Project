@@ -69,7 +69,7 @@
                 </span>Event Location</label>
                 <div class="block ">
                     <input class="input is-primary" type="text" name="locationBtn" id="addLocation" placeholder="Chicago">
-                    <button class="button m-1 is-primary is-light" type="submit" id="locationBtn">Add</button>
+                    <button class="button m-1 is-primary is-light" type="button" id="locationBtn">Add</button>
                 </div>
 
                 <label class="foodChoice title is-5"><span class="material-symbols-outlined">
@@ -77,7 +77,7 @@
                 </span>Food Choices</label>
                 <div class="block">
                     <input class="input is-warning" type="text" name="foodBtn" id="addFood" placeholder="Hello Pandas">
-                    <button class="button m-1 is-warning is-light" type="submit" id="foodBtn">Add</button>
+                    <button class="button m-1 is-warning is-light" type="button" id="foodBtn">Add</button>
                 </div>
 
                 <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
@@ -85,7 +85,7 @@
                     </span>Activities</label>
                 <div class="block">
                     <input class="input is-info" type="text" name="activityBtn" id="addActivity" placeholder="Sports">
-                    <button class="m-1 button is-info is-light" type="submit" id="activityBtn">Add</button>
+                    <button class="m-1 button is-info is-light" type="button" id="activityBtn">Add</button>
                 </div>
 
                 <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
@@ -93,19 +93,15 @@
                 </span>What to Bring</label>
                 <div class="block">
                     <div class="select is-medium">
-                        <select id="bringBtn">
+                        <select id="bringSelect">
                           <option>Select Activity</option>
-                          <option id="basket">Basketball</option> 
-                          <option id="volley">Volleyball</option>
-                          <option id="smores">S'mores</option>
-                          <option id="bbq">BBQ</option>
                         </select>
                     </div>
                 </div>
                 <!-- Code for input option for activities/what to bring -->
                 <div class="block">
-                    <input class="input is-info" type="text" name="bringBtn" id="whatToBring" placeholder="Clothes">
-                    <button class="m-1 button is-info is-light" type="submit" id="bringBtn">Add</button>
+                    <input class="input is-info" type="text" name="bringInput" id="whatToBring" placeholder="Clothes">
+                    <button class="m-1 button is-info is-light" type="button" id="bringBtn">Add</button>
                 </div>
 
 
@@ -138,31 +134,19 @@
         <div class="choice1 tile is-parent is-3">
             <article class="tile is-child box">
                 <h3 class="title">Food Choices</h3>
-                <ol>
-                    <li class="food1" id="foodChoice1"></li>
-                    <li class="food1" id="foodChoice2"></li>
-                    <li class="food1" id="foodChoice3"></li>
-                </ol>
+                <ol id="food"></ol>
             </article>
         </div>
         <div class="choice1 tile is-parent is-3">
             <article class="tile is-child box">
                 <h3 class="title">Activities </h3>
-                <ol>
-                    <li type="1" id="activityChoice1"></li>
-                    <li type="1" id="activityChoice2"></li>
-                    <li type="1" id="activityChoice3"></li>
-                </ol>
+                <ol id="activity"></ol>
             </article>
         </div>
 
         <div class="choice1 box tile is-3 is-vertical">
             <h3 class="tile is-child field">What to Bring</h3>
-            <ol>
-                <li type="1" id="bringItem1"></li>
-                <li type="1" id="bringItem2"></li>
-                <li type="1" id="bringItem3"></li>
-            </ol>
+            <ol id="bring"></ol>
 
         </div>
 
