@@ -14,9 +14,6 @@
     <link rel="stylesheet" href="./Develop/assets/style.css" />
     <link rel="icon" type="image/x-icon" href="./Develop/assets/images/planet_plan_it.jpg"/>
 
-    <link rel="icon" type="image/x-icon" href="./Develop/assets/images/planet_plan_it.jpg"/>
-
-
     <!-- Maps -->
     <link rel="stylesheet" href="https://unpkg.com/ol-popup@4.0.0/src/ol-popup.css" />
     <!-- <link rel="stylesheet" href="./Develop/assets/map.css"> -->
@@ -55,7 +52,9 @@
         <!-- Calendar inserted below here -->
         <div class="calendar block"> <input class="" type="date"></div>
         <div> 
-            <h2 class="title block is-mobile">Today's Weather</h2>
+
+            <h2 class="title block is-mobile">Weather</h2>
+
             <div class="" id="weatherDisplay"></div>
             <div class="" id="temp0"></div>
             <div class="" id="wind0"></div>
@@ -82,12 +81,22 @@
                 </div>
 
                 <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
+                    umbrella
+                    </span>Activities</label>
+                    <div class="block">
+                        <input class="input is-info" type="text" name="activityBtn" id="addActivity" placeholder="Sports">
+                        <button class="m-1 button is-info is-light" type="submit" id="activityBtn">Add</button>
+                    </div>
+
+                <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
                 umbrella
                 </span>What to Bring</label>
                 <div class="block">
                     <input class="input is-info" type="text" name="bringBtn" id="whatToBring" placeholder="Clothes">
                     <button class="m-1 button is-info is-light" type="submit" id="bringBtn">Add</button>
                 </div>
+
+                
 
             </form>
         </section>
@@ -102,6 +111,7 @@
     </div>
     <!-- //created a space between the top and bottom sections -->
     <section class="transparent choice1 box title">
+
         <h2 class="title">Your Event Plan: </h2>
       </section>
       <!-- Thsi section below includes User input for the overall event criteria-->
@@ -116,22 +126,32 @@
         <div class="choice1 tile is-parent is-3">
             <article class="tile is-child box">
                 <h3 class="title">Food Choices</h3>
-                <h4 class="food1" id="foodChoices"></h4>
-            </article>
-        </div>
-        <div class="choice1 tile is-parent is-3">
-            <article class="tile is-child box">
-                <h3 class="title">Activities </h3>
-                <ol type="1" id="activityList">
-
+                <ol>
+                    <li class="food1" id="foodChoice1"></li>
+                    <li class="food1" id="foodChoice2"></li>
+                    <li class="food1" id="foodChoice3"></li>
                 </ol>
             </article>
         </div>
         <div class="choice1 tile is-parent is-3">
             <article class="tile is-child box">
-                <h3 class="title">What to Bring</h3>
-                <ol type="1" id="bringList"></ol>
+                <h3 class="title">Activities </h3>
+                <ol>
+                    <li type="1" id="activityChoice1"></li>
+                    <li type="1" id="activityChoice2"></li>
+                    <li type="1" id="activityChoice3"></li>
+                </ol>
             </article>
+        </div>
+
+        <div class="choice1 box tile is-3 is-vertical">
+            <h3 class="tile is-child field">What to Bring</h3>
+            <ol>
+                <li type="1" id="bringItem1"></li>
+                <li type="1" id="bringItem2"></li>
+                <li type="1" id="bringItem3"></li>
+            </ol>
+
         </div>
 
     </div>
