@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
-
     <link rel="stylesheet" href="./Assets/CSS/style.css" />
     <link rel="icon" type="image/x-icon" href="./Assets/Images/planet_plan_it.jpg" />
 
@@ -37,7 +36,7 @@
 <body>
     <header class="title hero" id="mainHead" href="https://wallpaperaccess.com/full/186496.jpg">
         <div class="hero-body">
-            <p class="title is-size-1">
+            <p class="title is-size-1 planet">
                 Planet Plan-It
             </p>
             <p class="subtitle">
@@ -45,7 +44,7 @@
             </p>
         </div>
     </header>
-    <div class="transparent box columns is-centered is-1">
+    <div class="transparent choice1 box columns is-centered is-full">
         <!-- This is where the calendar will be viewed-->
         <div class="block column is-one-quarter" class="is-1">
             <div class="upcomingEvents block card is-3">
@@ -123,31 +122,32 @@
         <h2 class="title">Your Event Plan: </h2>
     </section>
     <!-- Thsi section below includes User input for the overall event criteria-->
-    <div class="selectedDay container tile is-ancestor">
+    <div class="selectedDay tile is-ancestor">
 
-        <div class="choice1 tile is-parent is-3" class="activityInput">
+        <div class="choice1 tile is-parent is-one-third" class="activityInput">
             <article class="tile is-child box">
                 <h3 class="title">Event Location</h3>
                 <h4 class="location1" id="eventLocation"></h4>
             </article>
         </div>
-        <div class="choice1 tile is-parent is-3">
+        <div class="choice1 tile is-parent is-one-third">
             <article class="tile is-child box">
                 <h3 class="title">Food Choices</h3>
                 <ol id="food"></ol>
             </article>
         </div>
-        <div class="choice1 tile is-parent is-3">
+        <div class="choice1 tile is-parent is-one-third">
             <article class="tile is-child box">
                 <h3 class="title">Activities </h3>
                 <ol id="activity"></ol>
             </article>
         </div>
 
-        <div class="choice1 box tile is-3 is-vertical">
-            <h3 class="tile is-child field">What to Bring</h3>
-            <ol id="bring"></ol>
-
+        <div class="choice1 tile is-parent is-one-third">
+            <article class="tile is-child box">
+                <h3 class="title">What to Bring</h3>
+                <ol id="bring"></ol>
+            </article>
         </div>
 
     </div>
