@@ -8,8 +8,12 @@ html {
     min-height: 100%;
 }
 
-.transparent,
-.selectedDay {
+/* .planet::after {
+    content: url('../Images/planiticon.jpg');
+    height: 20px;
+} */
+
+.transparent, .selectedDay {
     opacity: 0.82;
 }
 
@@ -33,14 +37,11 @@ h3 {
     background-position: center;
 }
 
-.title,
-.choice1 {
+.title, .choice1 {
     font-family: "Audiowide", sans-serif;
 }
 
-#temp0,
-#wind0,
-#humidity0 {
+#temp0, #wind0, #humidity0 {
     font-size: x-large;
     margin: 1px;
 }
@@ -52,4 +53,8 @@ h3 {
 #mapIframe {
     width: 100%;
     height: 100%;
+}
+
+li {
+    margin-left: 20px;
 }
