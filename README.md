@@ -1,6 +1,9 @@
-# Planet Plan-it 🪐
+# ![Logo](./Assets/Images/164.jpg)
+# Planet Plan-it
 ---
-
+![JS](https://img.shields.io/badge/JavaScript-72%25-yellow)
+![HTML](https://img.shields.io/badge/HTML-25%25-orange)
+![CSS](https://img.shields.io/badge/CSS-3%25-blue)
 ## Project #1 - Team 7  😎 Squirtle Squad
 
 ## Introduction: 
@@ -18,7 +21,7 @@ The event planner was built using the Bulma CSS framework and a variety of API's
 4. Google Fonts API
 5. Moment API
 
-### Images here: [Website Screenshots](https:). 
+### Images here: ![Website Screenshots](./Assets/Images/demo.jpg)
 
 The Image here represents an example of a few saved schedule events. 
 ![Business Events](Events.png)
@@ -28,6 +31,7 @@ The Image here represents an example of a few saved schedule events.
 This is a great tool for every company Event Planner to build a simple yet detailed outline of an upcoming event. They can create events for training, or to honor an important company anniversary, announce new products or services. They can use the app to recognize their best employees.
 
 Future developements will include popular restaurants near your intended event location for less formal or shorter events. With larger events you will get a list of suggested venues and most likely activities based on that venue(outdoor/Indoor). Other useful planning will include the implementation of emailed itenarary for users along with reminders. 
+
 --- 
 **Check out the web page below:**
 ##
