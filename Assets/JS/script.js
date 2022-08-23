@@ -206,7 +206,7 @@ function storeActivity(event) {
     if (data === null) {
         // If date is not in localStorage
 
-        let date_data = `{"activityObj":{${activityKey}:[]}}`;
+        let date_data = `{"activityObj":{"${activityKey}":[]}}`;
 
         localStorage.setItem(date, date_data);
 
