@@ -56,10 +56,10 @@ function storeLocation(event) {
 
     // Make sure a date has been chosen and user is not inputting an empty string
     if (date == '') {
-        alert("Please choose a date.");
+        showWarning("Please choose a date.");
         return;
     } else if (location == '') {
-        alert("Please enter a location.");
+        showWarning("Please enter a location.");
         return;
     }
 
@@ -97,10 +97,10 @@ function storeFood(event) {
 
     // Make sure a date has been chosen and user is not inputting an empty string
     if (date == '') {
-        alert("Please choose a date.");
+        showWarning("Please choose a date.");
         return;
     } else if (food == '') {
-        alert("Please enter a food.");
+        showWarning("Please enter a food.");
         return;
     }
     let data = localStorage.getItem(date);
@@ -145,13 +145,13 @@ function storeWhatToBring(event) {
     // Make sure a date has been chosen and user is not inputting an empty string
     // and an activity has been selected.
     if (date == '') {
-        alert("Please choose a date.");
+        showWarning("Please choose a date.");
         return;
     } else if (bringItem == '') {
-        alert("Please enter an item.");
+        showWarning("Please enter an item.");
         return;
     } else if (activitySelected == 'Select Activity') {
-        alert("Please select an activity.");
+        showWarning("Please select an activity.");
         return;
     }
     let data = localStorage.getItem(date);
@@ -159,7 +159,7 @@ function storeWhatToBring(event) {
     if (data === null) {
         // If date is not in localStorage
 
-        alert("Please create an activity first.");
+        showWarning("Please create an activity first.");
         return;
 
     } else {
@@ -195,10 +195,10 @@ function storeActivity(event) {
 
     // Make sure a date has been chosen and user is not inputting an empty string
     if (date == '') {
-        alert("Please choose a date.");
+        showWarning("Please choose a date.");
         return;
     } else if (activityKey == '') {
-        alert("Please enter an activity.");
+        showWarning("Please enter an activity.");
         return;
     }
     let data = localStorage.getItem(date);
@@ -379,3 +379,52 @@ function loadOptions() {
         bringSelect.add(newChild);
     }
 }
+
+function showWarning(s){
+    document.getElementById("warning").innerText = s;
+    document.getElementById("modal-js").classList.add("is-active");
+}
+document.addEventListener('DOMContentLoaded', () => {
+    // Functions to open and close a modal
+    function openModal($el) {
+      $el.classList.add('is-active');
+    }
+  
+    function closeModal($el) {
+      $el.classList.remove('is-active');
+    }
+  
+    function closeAllModals() {
+      (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+        closeModal($modal);
+      });
+    }
+  
+    // Add a click event on buttons to open a specific modal
+    (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+      const modal = $trigger.dataset.target;
+      const $target = document.getElementById(modal);
+  
+      $trigger.addEventListener('click', () => {
+        openModal($target);
+      });
+    });
+  
+    // Add a click event on various child elements to close the parent modal
+    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+      const $target = $close.closest('.modal');
+  
+      $close.addEventListener('click', () => {
+        closeModal($target);
+      });
+    });
+  
+    // Add a keyboard event to close all modals
+    document.addEventListener('keydown', (event) => {
+      const e = event || window.event;
+  
+      if (e.keyCode === 27) { // Escape key
+        closeAllModals();
+      }
+    });
+});
