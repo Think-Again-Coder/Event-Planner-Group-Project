@@ -6,25 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Adding stylesheet links for Bulma framework -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-    <!-- <link href="~bulma-calendar/dist/css/bulma-calendar.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Adding stylesheet links for Google Fonts -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <!-- Adding stylesheet path for CSS stylesheet -->
     <link rel="stylesheet" href="./Assets/CSS/style.css" />
-    <link rel="icon" type="image/x-icon" href="./Assets/Images/planet_plan_it.jpg" />
+    <!-- Adding image for icon on browser tab containing our logo -->
+    <link rel="icon" type="image/x-icon" href="./Assets/Images/planet_plan_it.jpg" alt="Drawing of a planet in space with a sticky note pinned on the top right"/>
 
 
     <!-- Maps -->
     <link rel="stylesheet" href="https://unpkg.com/ol-popup@4.0.0/src/ol-popup.css" />
-    <!-- <link rel="stylesheet" href="./Develop/assets/map.css"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css" type="text/css" />
+    <!-- Adding API links -->
     <script src="https://unpkg.com/@esri/arcgis-rest-request@4.0.0/dist/bundled/request.umd.js"></script>
     <script src="https://unpkg.com/@esri/arcgis-rest-routing@4.0.0/dist/bundled/routing.umd.js"></script>
     <script src="https://unpkg.com/@esri/arcgis-rest-geocoding@4.0.0/dist/bundled/geocoding.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/build/ol.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/ol-mapbox-style@6.1.4/dist/olms.js" type="text/javascript"></script>
-
     <script src="https://unpkg.com/ol-popup@4.0.0"></script>
     <link href="https://cdn.jsdelivr.net/npm/bulma-calendar@6.0.7/dist/css/bulma-calendar.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bulma-calendar@6.1.18/dist/js/bulma-calendar.min.js"></script>
@@ -34,6 +36,7 @@
 </head>
 
 <body>
+    <!-- Added space image for header  -->
     <header class="title hero" id="mainHead" href="https://wallpaperaccess.com/full/186496.jpg">
         <div class="hero-body">
             <p class="title is-size-1 planet">
@@ -44,6 +47,7 @@
             </p>
         </div>
     </header>
+    <!-- Setting box that will hold first section of forms -->
     <div class="transparent choice1 box columns is-centered is-full">
         <!-- This is where the calendar will be viewed-->
         <div class="block column is-one-quarter" class="is-1">
@@ -53,6 +57,7 @@
             <!-- Calendar inserted below here -->
             <div class="calendar block"> <input id="datePicker" class="" type="date"></div>
             <div>
+                <!-- Weather will be displayed here once date and location are selected -->
                 <h2 class="title block is-mobile">Weather</h2>
                 <div class="" id="weatherDisplay"></div>
                 <div class="" id="temp0"></div>
@@ -60,17 +65,18 @@
                 <div class="" id="humidity0"></div>
             </div>
         </div>
-        <!-- This is our form for user input on event options -->
+        <!-- These are our forms for user input on event options -->
         <section class="card is-5 box column is-one-third">
             <form class="is-1" action="" method="GET" id="form">
                 <h2 class="card title block">Details Below: </h2>
+                <!-- Form for user to input city and submit -->
                 <label class="activityInput title is-5"><span class="material-symbols-outlined">location_on
                 </span>Event Location</label>
                 <div class="block ">
                     <input class="input is-primary" type="text" name="locationBtn" id="addLocation" placeholder="Chicago">
                     <button class="button m-1 is-primary is-light" type="button" id="locationBtn">Add</button>
                 </div>
-
+                <!-- Form for user to input food and submit -->
                 <label class="foodChoice title is-5"><span class="material-symbols-outlined">
                 restaurant
                 </span>Food Choices</label>
@@ -78,7 +84,7 @@
                     <input class="input is-warning" type="text" name="foodBtn" id="addFood" placeholder="Hello Pandas">
                     <button class="button m-1 is-warning is-light" type="button" id="foodBtn">Add</button>
                 </div>
-
+                <!-- Form for user to input activity and submit -->
                 <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
                     umbrella
                     </span>Activities</label>
@@ -86,76 +92,78 @@
                     <input class="input is-info" type="text" name="activityBtn" id="addActivity" placeholder="Sports">
                     <button class="m-1 button is-info is-light" type="button" id="activityBtn">Add</button>
                 </div>
-
+                <!-- Form for user to select activity from previous form submission and input materials and submit -->
                 <label class="whatToBring title is-5 "><span class="m-1 material-symbols-outlined">
                 umbrella
                 </span>What to Bring</label>
                 <div class="block">
+                    <!-- Selection form that will pull info from previous form submission -->
                     <div class="select is-medium">
                         <select id="bringSelect">
                           <option>Select Activity</option>
                         </select>
                     </div>
                 </div>
-                <!-- Code for input option for activities/what to bring -->
+                <!-- Form for user to input materials and submit -->
                 <div class="block">
                     <input class="input is-info" type="text" name="bringInput" id="whatToBring" placeholder="Clothes">
                     <button class="m-1 button is-info is-light" type="button" id="bringBtn">Add</button>
                 </div>
-
-
-
             </form>
         </section>
-        <!-- This section includes a form for the food, acitvities, and Weather options-->
+        <!-- Location and map will populate here once user selects date and city -->
         <div class="column is-one-third form title is-3">
             <div class="block day card box" class="location ">Location: </div>
             <div class="box title is-5">
                 <iframe id="mapIframe" src="./map.html" frameborder="0"></iframe>
             </div>
-
         </div>
     </div>
-    <!-- //created a space between the top and bottom sections -->
+    <!-- Created a space between the top and bottom sections -->
     <section class="transparent choice1 box title">
-
         <h2 class="title">Your Event Plan: </h2>
     </section>
-    <!-- Thsi section below includes User input for the overall event criteria-->
+    <!-- Section to display user input from forms above -->
     <div class="selectedDay tile is-ancestor">
-
+        <!-- Displays user input City. Uses Bulma to format layout -->
         <div class="choice1 tile is-parent is-one-third" class="activityInput">
             <article class="tile is-child box">
                 <h3 class="title">Event Location</h3>
                 <h4 class="location1" id="eventLocation"></h4>
             </article>
         </div>
+        <!-- Displays user input Food. Uses Bulma to format layout -->
         <div class="choice1 tile is-parent is-one-third">
             <article class="tile is-child box">
                 <h3 class="title">Food Choices</h3>
+                <!-- Ordered list allows multiple user input submissions -->
                 <ol id="food"></ol>
             </article>
         </div>
+        <!-- Displays user input Activity. Uses Bulma to format layout -->
         <div class="choice1 tile is-parent is-one-third">
             <article class="tile is-child box">
                 <h3 class="title">Activities </h3>
+                <!-- Ordered list allows multiple user input submissions -->
                 <ol id="activity"></ol>
             </article>
         </div>
-
+        <!-- Displays user input Materials. Uses Bulma to format layout -->
         <div class="choice1 tile is-parent is-one-third">
             <article class="tile is-child box">
                 <h3 class="title">What to Bring</h3>
+                <!-- Ordered list allows multiple user input submissions -->
                 <ol id="bring"></ol>
             </article>
         </div>
 
     </div>
 
+    <!-- Path for moment api for date functionality -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <!-- Maps -->
+    <!-- Path for javascript file for map functionality -->
     <script src="./Assets/JS/maps.js"></script>
-    <!-- <script src="~bulma-calendar/dist/js/bulma-calendar.min.js"></script> -->
+    <!-- Path for javascript file for site functionality -->
     <script src="./Assets/JS/script.js"></script>
 </body>
 
