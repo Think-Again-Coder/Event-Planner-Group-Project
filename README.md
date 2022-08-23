@@ -35,10 +35,11 @@ Future developements will include popular restaurants near your intended event l
 --- 
 **Check out the web page below:**
 ##
-[Event Planner](https://think-again-coder.github.io/EventPlanner/) <---- Click Here!
+[Planet Plan-It](https://think-again-coder.github.io/EventPlanner/) <---- Click Here!
+
 ## 
 ### - Brought to you by the Squirtle Squad - 
 
 Anhvu, Emma, Dylan, John, and David
 
-
+[Presentation](./Assets/Images/Presentation.pdf)
