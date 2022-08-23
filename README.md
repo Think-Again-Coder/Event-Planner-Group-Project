@@ -24,7 +24,7 @@ The event planner was built using the Bulma CSS framework and a variety of API's
 ### Images here: ![Website Screenshots](./Assets/Images/demo.jpg)
 
 The Image here represents an example of a few saved schedule events. 
-![Business Events](Events.png)
+![Business Events](/Assets/Images/demo2.jpg)
 
 ## Summary: 
 
@@ -35,10 +35,11 @@ Future developements will include popular restaurants near your intended event l
 --- 
 **Check out the web page below:**
 ##
-[Event Planner](https://think-again-coder.github.io/eventplanner/) <---- Click Here!
+[Planet Plan-It](https://think-again-coder.github.io/EventPlanner/) <---- Click Here!
+
 ## 
 ### - Brought to you by the Squirtle Squad - 
 
 Anhvu, Emma, Dylan, John, and David
 
-
+[Presentation](./Assets/Images/Presentation.pdf)

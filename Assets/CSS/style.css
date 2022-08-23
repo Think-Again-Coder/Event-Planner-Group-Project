@@ -2,17 +2,14 @@
     /* border: solid 1px goldenrod; */
 }
 
+/* Add background image to entire page, make sure it doesn't repeat */
 html {
     background-image: url(https://wallpaperaccess.com/full/413655.jpg);
     background-size: cover;
     min-height: 100%;
 }
 
-/* .planet::after {
-    content: url('../Images/planiticon.jpg');
-    height: 20px;
-} */
-
+/* Set sections and boxes to transparent to show background image */
 .transparent, .selectedDay {
     opacity: 0.82;
 }
@@ -37,6 +34,7 @@ h3 {
     background-position: center;
 }
 
+/* Apply Google Font Audiowide to all text */
 .title, .choice1 {
     font-family: "Audiowide", sans-serif;
 }
